@@ -1,0 +1,19 @@
+execution:
+ - scenario: simple
+   concurrency: 2
+   ramp-up: 5
+   hold-for: 120
+
+scenarios:
+  simple:
+    script: pmk b2c portal-click&collect.jmx
+
+reporting:
+ - module: final-stats
+   dump-xml: stats.xml
+    
+ - module: passfail
+   criterias:
+   - avg-rt>250ms for 30s, continue as failed
+   - failures>10% for 10s, continue as failed
+   - failures>70% for 15s, stop as failed
