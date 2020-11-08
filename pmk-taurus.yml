@@ -15,4 +15,4 @@ reporting:
    - "fail>10% for 10s, continue as failed"
  - module: junit-xml
    filename: ./loadtest-result.xml
-   data-source: passfail
+   data-source: pass-fail
