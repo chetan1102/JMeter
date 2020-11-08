@@ -9,11 +9,10 @@ scenarios:
     script: pmk b2c portal-click&collect.jmx
 
 reporting:
- - module: final-stats
-   dump-xml: stats.xml
-    
  - module: passfail
-   criterias:
-   - avg-rt>250ms for 30s, continue as failed
-   - failures>10% for 10s, continue as failed
-   - failures>70% for 15s, stop as failed
+   criteria:
+   - "avg-rt>250ms for 30s, continue as failed"
+   - "fail>10% for 10s, continue as failed"
+ - module: junit-xml
+   filename: ./loadtest-result.xml
+   data-source: passfail
