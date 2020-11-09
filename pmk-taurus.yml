@@ -11,7 +11,7 @@ scenarios:
 reporting:
  - module: passfail
    criteria:
-   - "avg-rt>5000ms for 30s, continue as failed"
+   - "avg-rt>1000ms for 5s, continue as failed"
    - "fail>10% for 10s, continue as failed"
  - module: junit-xml
    filename: ./loadtest-result.xml
