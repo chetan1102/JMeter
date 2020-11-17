@@ -12,4 +12,4 @@ RUN rm -r /opt/apache-jmeter-5.2.1/apache-jmeter-5.2.1
 
 RUN mkdir script/
 
-Copy /home/cchauhan/*.jmx script/
+Copy /home/cchauhan/git/Jmeter/*.jmx script/
