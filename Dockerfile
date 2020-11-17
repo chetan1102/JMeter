@@ -1,5 +1,3 @@
-FROM ubuntu:20.04.1
-
 WORKDIR /opt/apache-jmeter-5.2.1
 
 RUN yum update -y
