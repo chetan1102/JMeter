@@ -18,4 +18,3 @@ RUN mv apache-jmeter-5.2.1/* /opt/apache-jmeter-5.2.1
 RUN rm -r /opt/apache-jmeter-5.2.1/apache-jmeter-5.2.1
 
 RUN mkdir script/
-COPY /home/cchauhan/git/JMeter/pmk b2c portal-click&collect.jmx script/
