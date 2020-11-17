@@ -10,7 +10,7 @@ WORKDIR /opt/apache-jmeter-5.2.1
 
 ARG TZ="New Zealand"
 RUN apt-get update -y
-RUN apt-get install openjdk-11-jre-headless -y
+RUN apt-get install openjdk-11-jre openjdk-11-jdk -y
 RUN apt-get install wget -y
 RUN wget http://apache.stu.edu.tw//jmeter/binaries/apache-jmeter-5.2.1.tgz
 RUN tar -xzf apache-jmeter-5.2.1.tgz 
