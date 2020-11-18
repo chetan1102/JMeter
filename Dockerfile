@@ -12,7 +12,7 @@ ARG TZ="New Zealand"
 RUN apt-get update -y
 RUN apt-get install openjdk-11-jre openjdk-11-jdk -y
 RUN apt-get install wget -y
-RUN wget https://apache.inspire.net.nz//jmeter/binaries/apache-jmeter-5.2.1.tgz
+RUN wget -nv https://apache.inspire.net.nz//jmeter/binaries/apache-jmeter-5.2.1.tgz
 RUN tar -xzf apache-jmeter-5.2.1.tgz 
 RUN mv apache-jmeter-5.2.1/* /opt/apache-jmeter-5.2.1
 RUN rm -r /opt/apache-jmeter-5.2.1/apache-jmeter-5.2.1
