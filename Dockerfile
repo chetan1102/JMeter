@@ -1,19 +1,23 @@
-FROM ubuntu:20.04
+#FROM ubuntu:20.04
+#FROM node:current-slim
+FROM java:11
 
 ARG JMETER_VERSION="5.2.1"
-ENV JMETER_HOME /opt/apache-jmeter-5.2.1
-ENV JMETER_BIN  /opt/apache-jmeter-5.2.1/bin
-ENV JMETER_DOWNLOAD_URL  https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.2.1.tgz
+ENV JMETER_HOME /opt/apache-jmeter-${JMETER_VERSION}
+ENV JMETER_BIN  /opt/apache-jmeter-${JMETER_VERSION}/bin
+ENV JMETER_DOWNLOAD_URL  https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
 
-WORKDIR /opt/apache-jmeter-5.2.1
+WORKDIR /opt/apache-jmeter-${JMETER_VERSION}/performancetesting
 
 ARG TZ="New Zealand"
 RUN apt-get update -y
 RUN apt-get install openjdk-11-jre openjdk-11-jdk -y
 RUN apt-get install wget -y
-RUN wget -nv https://apache.inspire.net.nz//jmeter/binaries/apache-jmeter-5.2.1.tgz
-RUN tar -xzf apache-jmeter-5.2.1.tgz 
-RUN mv apache-jmeter-5.2.1/* /opt/apache-jmeter-5.2.1
-RUN rm -r /opt/apache-jmeter-5.2.1/apache-jmeter-5.2.1
-RUN mkdir script/
+RUN wget -nv https://apache.inspire.net.nz//jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz
+RUN tar -xzf apache-jmeter-${JMETER_VERSION}.tgz 
+RUN mv apache-jmeter-${JMETER_VERSION}/* /opt/apache-jmeter-${JMETER_VERSION}
+RUN rm -r /opt/apache-jmeter-${JMETER_VERSION}/apache-jmeter-${JMETER_VERSION}
+RUN mkdir performancetesting/
+RUN cd performancetesting/
+RUN mkdir script data results
