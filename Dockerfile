@@ -16,7 +16,5 @@ RUN apt-get install wget -y
 RUN wget -nv https://apache.inspire.net.nz/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz
 RUN tar -xzf apache-jmeter-${JMETER_VERSION}.tgz 
 RUN mv apache-jmeter-${JMETER_VERSION}/* /opt/apache-jmeter-${JMETER_VERSION}
-RUN rm -r /opt/apache-jmeter-${JMETER_VERSION}/apache-jmeter-${JMETER_VERSION}
-RUN mkdir performancetesting/
-RUN cd performancetesting/
-RUN mkdir script data results
+RUN rm -r /opt/apache-jmeter-${JMETER_VERSION}/apache-jmeter-${JMETER_VERSION}.tgz
+RUN mkdir -p performancetesting/script performancetesting/script/data performancetesting/results
