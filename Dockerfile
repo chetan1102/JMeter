@@ -1,6 +1,5 @@
-#FROM ubuntu:20.04
+FROM ubuntu:20.04
 #FROM node:current-slim
-FROM java:11
 
 ARG JMETER_VERSION="5.2.1"
 ENV JMETER_HOME /opt/apache-jmeter-${JMETER_VERSION}
