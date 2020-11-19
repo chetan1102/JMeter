@@ -17,6 +17,6 @@ RUN wget -nv https://apache.inspire.net.nz/jmeter/binaries/apache-jmeter-${JMETE
 RUN tar -xzf apache-jmeter-${JMETER_VERSION}.tgz 
 RUN mv apache-jmeter-${JMETER_VERSION}/* /opt/apache-jmeter-${JMETER_VERSION}
 RUN rm -r /opt/apache-jmeter-${JMETER_VERSION}/apache-jmeter-${JMETER_VERSION}.tgz
-RUN mkdir -p performancetesting/script performancetesting/script/data performancetesting/results
+RUN mkdir -p performancetesting/script performancetesting/script performancetesting/results
 
 WORKDIR /opt/apache-jmeter-${JMETER_VERSION}/performancetesting
