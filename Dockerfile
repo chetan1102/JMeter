@@ -18,3 +18,5 @@ RUN tar -xzf apache-jmeter-${JMETER_VERSION}.tgz
 RUN mv apache-jmeter-${JMETER_VERSION}/* /opt/apache-jmeter-${JMETER_VERSION}
 RUN rm -r /opt/apache-jmeter-${JMETER_VERSION}/apache-jmeter-${JMETER_VERSION}.tgz
 RUN mkdir -p performancetesting/script performancetesting/script/data performancetesting/results
+
+WORKDIR /opt/apache-jmeter-${JMETER_VERSION}/performancetesting
