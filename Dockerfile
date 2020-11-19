@@ -7,7 +7,7 @@ ENV JMETER_BIN  /opt/apache-jmeter-${JMETER_VERSION}/bin
 ENV JMETER_DOWNLOAD_URL  https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
 
-WORKDIR /opt/apache-jmeter-${JMETER_VERSION}/performancetesting
+WORKDIR /opt/apache-jmeter-${JMETER_VERSION}/
 
 ARG TZ="New Zealand"
 RUN apt-get update -y
