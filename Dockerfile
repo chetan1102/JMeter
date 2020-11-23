@@ -1,7 +1,9 @@
 FROM ubuntu:20.04
 #FROM node:current-slim
 
-ARG JMETER_VERSION="5.2.1"
+#ARG JMETER_VERSION="5.2.1"
+ARG JMETER_VERSION
+ENV JMETER_VERSION=${JMETER_VERSION:-5.2.1}
 ENV JMETER_HOME /opt/apache-jmeter-${JMETER_VERSION}
 ENV JMETER_BIN  /opt/apache-jmeter-${JMETER_VERSION}/bin
 ENV JMETER_DOWNLOAD_URL  https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz
