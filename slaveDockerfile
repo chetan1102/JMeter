@@ -18,6 +18,6 @@ ENV PATH $JMETER_HOME/bin:$PATH
 EXPOSE 1099 50000
 
 ENTRYPOINT $JMETER_HOME/bin/jmeter-server \
-                        -Jserver.rmi.ssl.disable=true
+                        -Jserver.rmi.ssl.disable=true \
                         -Dserver.rmi.localport=50000 \
                         -Dserver_port=1099
